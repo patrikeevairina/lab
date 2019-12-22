@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int global;
+
+int main()
+{
+   int local;
+   int* din = new int;
+   cout<<&global<<"  "<<&local<<"  "<<din;
+   return 0;
+}
