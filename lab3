@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+
+	struct Kitten
+	{
+		short id;
+		char name[15];
+		long code;
+		int age;
+	};
+
+	struct Puppy
+	{
+		char name[15];
+		long code;
+		int age;
+		short id;
+	};
+	
+	#pragma pack(push,1)
+
+	struct Raccoon
+	{
+		char name[15];
+		int age;
+		short id;
+		long code;
+	};
+	
+	#pragma pack(pop)
+
+int main()
+{	
+	Kitten Mary;
+	Puppy John;
+	Raccoon Olivia;
+
+	cout
+		<<&Mary.id<<"\n"<<(void*)Mary.name<<"\n"<<&Mary.code<<"\n"<<&Mary.age<<"."<<"\n"
+		<<(void*)John.name<<"\n"<<&John.code<<"\n"<<&John.age<<"\n"<<&John.id<<"."<<"\n"
+		<<(void*)Olivia.name<<"\n"<<&Olivia.age<<"\n"<<&Olivia.id<<"\n"<<&Olivia.code<<endl;
+
+	cout
+		<<sizeof(Mary)<<"  "<<sizeof(Mary.id)+sizeof(Mary.name)+sizeof(Mary.code)+sizeof(Mary.age)<<endl
+		<<sizeof(John)<<"  "<<sizeof(John.name)+sizeof(John.code)+sizeof(John.age)+sizeof(John.id)<<endl
+		<<sizeof(Olivia)<<"  "<<sizeof(Olivia.name)+sizeof(Olivia.age)+sizeof(Olivia.id)+sizeof(Olivia.code)<<endl;
+
+
+	return 0;
+}
+	
+
